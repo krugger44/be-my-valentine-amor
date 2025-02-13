@@ -3,30 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Be My Valentine amor </title>
+    <title>Be My Valentine amor</title>
     <link rel="stylesheet" href="css/valentine.css" />
   </head>
   <body>
     <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
-    <button class="answerButton" id="yesButton" onclick="location.href='thankyou.html'">Yes</button>
 
+    <!-- Corrected Yes button with an ID -->
+    <button class="answerButton" id="yesButton" onclick="location.href='thankyou.html'">
+      Yes
     </button>
+
+    <!-- No button that will trigger the Yes button to grow -->
     <button class="answerButton" id="noButton">no quiero culo sucio o(╥﹏╥)o</button>
+    
     <br />
     <img src="cat.gif" alt="cat asking question" class="responsive" />
 
     <script>
-      document
-        .getElementById("noButton")
-        .addEventListener("click", function () {
-          var yesButton = document.getElementById("yesButton");
-
-          );
-          var currentFontSize = parseInt(
-            window.getComputedStyle(yesButton).fontSize
-          );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
-        });
+      document.getElementById("noButton").addEventListener("click", function () {
+        var yesButton = document.getElementById("yesButton"); // Selects the Yes button
+        var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+        yesButton.style.fontSize = (currentFontSize + 10) + "px"; // Increases the size when No is clicked
+      });
     </script>
   </body>
 </html>
