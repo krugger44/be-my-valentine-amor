@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Be My Valentine amor</title>
     <link rel="stylesheet" href="css/valentine.css" />
+    <style>
+      /* Make sure buttons resize smoothly */
+      .answerButton {
+        transition: all 0.3s ease-in-out;
+      }
+    </style>
   </head>
   <body>
     <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
 
-    <!-- Corrected Yes button with an ID -->
+  
     <button class="answerButton" id="yesButton" onclick="location.href='thankyou.html'">
       Yes
     </button>
 
-    <!-- No button that will trigger the Yes button to grow -->
     <button class="answerButton" id="noButton">no quiero culo sucio o(╥﹏╥)o</button>
     
     <br />
@@ -22,10 +27,12 @@
 
     <script>
       document.getElementById("noButton").addEventListener("click", function () {
-        var yesButton = document.getElementById("yesButton"); // Selects the Yes button
-        var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
-        yesButton.style.fontSize = (currentFontSize + 10) + "px"; // Increases the size when No is clicked
+        var yesButton = document.getElementById("yesButton"); 
+        var currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize); 
+        
+        yesButton.style.fontSize = (currentSize + 10) + "px"; 
       });
     </script>
   </body>
 </html>
+
